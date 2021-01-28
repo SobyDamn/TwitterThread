@@ -172,13 +172,13 @@ h1#title {
 }
 @media only screen and (max-width:700px) {
     .header {
-        width: 97%;
+        width: 100%;
     }
     .footer {
-        width: 97%;
+        width: 100%;
     }
     div#thread {
-        width: 97%;
+        width: 100%;
     }
     body {
         margin: 0;
