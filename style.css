@@ -1,0 +1,120 @@
+@font-face {
+    font-family: openSans;
+    src: url(fonts/OpenSans-Regular.ttf);
+  }
+@font-face {
+    font-family: openSans-semibold;
+    src: url(fonts/OpenSans-SemiBold.ttf);
+    }
+@font-face {
+    font-family: openSans-bold;
+    src: url(fonts/OpenSans-Bold.ttf);
+  }
+body {
+    background-color: rgba(196, 211, 212, 0.938);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: openSans;
+}
+#title {
+    font-family: openSans-bold;
+}
+div#thread {
+    background-color:white;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    border: 2px solid black;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 700px;
+}
+div#user {
+    display: inline-flex;
+    justify-content: center;
+    border: 2px solid red;
+    min-width: 300px;
+}
+div#user-img img{
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+div#user-details{
+    height: 80px;
+    text-align: left;
+}
+div#user-details div{
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+div#user-details div p{
+    margin: 0;
+}
+#user-name{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(20, 19, 19);
+    font-family: openSans-bold;
+}
+#user-username{
+    font-size: small;
+    color: rgb(145, 145, 145);
+    font-family: openSans;
+}
+h1#title {
+    text-align: center;
+}
+#thread-holder {
+    text-align: center;
+    border: 2px solid rgb(4, 0, 255);
+    display: inline-flex;
+    flex-direction:column;
+    align-content: center;
+    flex-wrap: wrap;
+    min-width: auto;
+}
+.tweet {
+    max-width: 500px;
+    border: 2px solid yellow;
+    text-align: left;
+    padding: 10px;
+}
+.tweet-time {
+    color: gray;
+    font-family: openSans-semibold;
+    font-size: small;
+}
+.tweet-text {
+    color: rgb(14, 12, 12);
+    font-weight: 500;
+}
+.tweet-img-container {
+    border: 2px solid green;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.tweet-img-container-pair {
+    padding: 3px;
+    height: 200px;
+    border: 2px solid green;
+    display:flex;
+    justify-content: space-evenly;
+}
+.tweet-img-container img{
+    padding: 2px;
+    min-width: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
