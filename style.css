@@ -10,6 +10,10 @@
     font-family: openSans-bold;
     src: url(fonts/OpenSans-Bold.ttf);
   }
+@font-face {
+    font-family: Londrina-Light;
+    src: url(fonts/LondrinaSolid-Light.ttf);
+    }
 body {
     background-color: rgba(196, 211, 212, 0.938);
     display: flex;
@@ -17,8 +21,57 @@ body {
     flex-direction: column;
     font-family: openSans;
 }
+#content-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.header {
+    width: 700px;
+    background-color: rgb(36, 36, 116);
+    border-radius: 8px 8px 0 0;
+    position: relative;
+}
+.footer .foot-note {
+    text-align: center;
+}
+#print-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color:  rgb(84, 84, 163);
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: none;
+    cursor: pointer;
+    color: white;
+    font-family: openSans-semibold;
+    transition: 0.3s;
+    opacity: 0.7;
+    outline:none;
+}
+#print-btn:hover {
+    opacity: 1;
+}
+.footer {
+    width: 700px;
+    background-color: rgb(36, 36, 116);
+    border-radius: 0px 0px 8px 8px;
+    font-family: openSans-semibold;
+    color: white;
+    text-align: center;
+}
+.footer a {
+    text-decoration: none;
+    color: rgb(128, 123, 104);
+}
 #title {
-    font-family: openSans-bold;
+    font-family: Londrina-Light;
+    color: white;
 }
 div#thread {
     background-color:white;
@@ -26,15 +79,15 @@ div#thread {
     flex-direction: column;
     justify-content: center;
     align-self: center;
-    border: 2px solid black;
     border-radius: 4px;
     text-align: center;
-    min-width: 700px;
+    width: 700px;
 }
 div#user {
+    background-color:white;
+    padding: 2px;
     display: inline-flex;
     justify-content: center;
-    border: 2px solid red;
     min-width: 300px;
 }
 div#user-img img{
@@ -73,8 +126,8 @@ h1#title {
     text-align: center;
 }
 #thread-holder {
+    background-color:white;
     text-align: center;
-    border: 2px solid rgb(4, 0, 255);
     display: inline-flex;
     flex-direction:column;
     align-content: center;
@@ -82,8 +135,8 @@ h1#title {
     min-width: auto;
 }
 .tweet {
+    border-bottom: 1px solid rgb(207, 207, 207);
     max-width: 500px;
-    border: 2px solid yellow;
     text-align: left;
     padding: 10px;
 }
@@ -97,7 +150,6 @@ h1#title {
     font-weight: 500;
 }
 .tweet-img-container {
-    border: 2px solid green;
     width: 100%;
     display:flex;
     justify-content: center;
@@ -106,7 +158,6 @@ h1#title {
 .tweet-img-container-pair {
     padding: 3px;
     max-height: 200px;
-    border: 2px solid green;
     display:flex;
     justify-content: space-evenly;
 }
