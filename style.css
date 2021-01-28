@@ -28,24 +28,25 @@ body {
     align-items: center;
 }
 .header {
-    width: 700px;
     background-color: rgb(36, 36, 116);
     border-radius: 8px 8px 0 0;
-    position: relative;
+    width: 700px;
 }
 .footer .foot-note {
     text-align: center;
 }
+.header #btn-container{
+    display: flex;
+    padding: 3px;
+    justify-content:flex-end;
+}
 #print-btn {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
     background-color:  rgb(84, 84, 163);
     padding: 5px;
     padding-left: 7px;
     padding-right: 7px;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: none;
     cursor: pointer;
     color: white;
@@ -168,4 +169,33 @@ h1#title {
     max-width: 100%;
     object-fit: cover;
     border-radius: 8px;
+}
+@media only screen and (max-width:700px) {
+    .header {
+        width: 97%;
+    }
+    .footer {
+        width: 97%;
+    }
+    div#thread {
+        width: 97%;
+    }
+    body {
+        margin: 0;
+        width: 100%;
+        display: block;
+    }
+}
+@media only screen and (max-width:500px) {
+    .tweet {
+        font-size: small;
+    }
+    .tweet-time {
+        font-size: smaller;
+    }
+}
+@media only screen and (max-width:300px){
+    div#user {
+        min-width: 50px;
+    }
 }
