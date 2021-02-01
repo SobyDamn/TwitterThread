@@ -15,6 +15,7 @@
     src: url(fonts/LondrinaSolid-Light.ttf);
     }
 body {
+    margin: 0;
     background-color: rgba(196, 211, 212, 0.938);
     display: flex;
     justify-content: center;
@@ -31,6 +32,16 @@ body {
     background-color: rgb(36, 36, 116);
     border-radius: 8px 8px 0 0;
     width: 700px;
+}
+#thread-body {
+    background-color: white;
+    text-align: center;
+    min-height: 600px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 .footer .foot-note {
     text-align: center;
@@ -117,11 +128,17 @@ div#user-details div p{
     font-weight: bold;
     color: rgb(20, 19, 19);
     font-family: openSans-bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+#user-name:hover {
+    text-decoration: underline;
 }
 #user-username{
     font-size: small;
     color: rgb(145, 145, 145);
     font-family: openSans;
+    text-decoration: none;
 }
 h1#title {
     text-align: center;
@@ -149,26 +166,79 @@ h1#title {
 .tweet-text {
     color: rgb(14, 12, 12);
     font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
 }
-.tweet-img-container {
+.tweet-media-container {
     width: 100%;
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.tweet-img-container-pair {
+.tweet-media-container-pair {
     padding: 3px;
     max-height: 200px;
-    display:flex;
+    display:inline-flex;
     justify-content: space-evenly;
 }
-.tweet-img-container img{
+.tweet-media-box{
+    margin: 0;
+    padding: 0px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+    min-width: 50%;
+    max-width: 350px;
+}
+.tweet-media {
     padding: 2px;
     min-width: 50%;
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
     border-radius: 8px;
+}
+.media-play-overlay {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+.media-play-overlay img{
+    max-height: 40%;  
+    max-width: 40%; 
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.media-play-overlay:hover img {
+    opacity: 0.8;
+}
+#thread-404 {
+    min-height: 100%;
+    background-color: white;
+    display: block;
+    width: 70%;
+    font-family: openSans-bold;
+}
+#thread-404 h1 {
+    font-size: 300%;
 }
 @media only screen and (max-width:700px) {
     .header {
@@ -186,6 +256,9 @@ h1#title {
         margin: 0;
         width: 100%;
         display: block;
+    }
+    #thread-body {
+        width: 100%;
     }
 }
 @media only screen and (max-width:500px) {

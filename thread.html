@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <title>Tweet Threader</title>
+  <body onload="fetchThread()">
+      <div id="content-body">
+        <div class="header">
+            <h1 id="title">Tweet Threader</h1>
+            <div id="btn-container">
+                <button onclick="window.print()" id="print-btn">Print</button>
+            </div>
+        </div>
+        <div id="thread-body">
+            <div id="thread-404" style="display: none;">
+                <h1>ERROR!</h1>
+                Something went wrong!
+                <br>
+                We are not able to fetch the data of thread which you're looking for,it might be because of the thread you are looking for has been removed or doesn't exists.
+                <br>
+                Also make sure you are not offline!
+            </div>
+            <div id="thread-loader">
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+            <div id="thread" style="display: none;">
+                <div id="user">
+                    <div id="user-img">
+                        <img src="random2.jpg" alt="Display Picture">
+                    </div>
+                    <div id="user-details">
+                        <div>
+                        <a href="google.c" id="user-name">Sritabh Priyadarshi</a>
+                        <br>
+                        <a href="google.c" id="user-username">@SobyDamn</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="thread-holder">
+                    <div class="tweet">
+                        <label class="tweet-time">26 Mar, 2020 12:20 AM</label>
+                        <br>
+                        <a href="g.co" class="tweet-text">
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                        </a>
+                        <div class="tweet-media-container">
+                            <div class="tweet-media-container-pair">
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tweet-media-container-pair">
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tweet">
+                        <label class="tweet-time">26 Mar, 2020 12:20 AM</label>
+                        <br>
+                        <label class="tweet-text">
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                        </label>
+                    </div>
+                    <div class="tweet">
+                        <label class="tweet-time">26 Mar, 2020 12:20 AM</label>
+                        <br>
+                        <label class="tweet-text">
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                        </label>
+                        <div class="tweet-media-container">
+                            <div class="tweet-media-container-pair">
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tweet-media-container-pair">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tweet">
+                        <label class="tweet-time">26 Mar, 2020 12:20 AM</label>
+                        <br>
+                        <label class="tweet-text">
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                        </label>
+                        <div class="tweet-media-container">
+                            <div class="tweet-media-container-pair">
+                            </div>
+                            <div class="tweet-media-container-pair">
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay" style="display: block;">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tweet">
+                        <label class="tweet-time">26 Mar, 2020 12:20 AM</label>
+                        <br>
+                        <label class="tweet-text">
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                            Some random tweet done by some random, probably thorwing his opinion on the internet but who cares.
+                            I don't!
+                        </label>
+                        <div class="tweet-media-container">
+                            <div class="tweet-media-container-pair">
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tweet-media-container-pair">
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                                <div class="tweet-media-box">
+                                    <img class = "tweet-media" src="random1.jpg" alt="Tweet Image"/>
+                                    <div class="media-play-overlay">
+                                        <img src="media-play-button.png" alt="Play Video"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h5 class="foot-note">Made with <a href="https://github.com/SobyDamn/TwitterThread"><i class="fa fa-heart pulse"></i></a> by SobyDamn</h5>
+        </div>
+      </div>
+  </body>
+</html>
+
