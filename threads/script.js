@@ -44,6 +44,7 @@ class ThreadViewer {
             }
         }).then(()=>{
             if (threadDetails){
+                //console.log("Show page")
                 document.getElementById("thread-loader").style.display = "none";
                 document.getElementById("thread-404").style.display = "none";
                 document.getElementById("thread").style.display = "block";
@@ -103,21 +104,22 @@ class ThreadViewer {
     createTweetMediaBox(media){
         var dom = ``
         if(media){
+            console.log(media.expanded_url,media.media_url)
             if (media['type']=="video"){
                 dom = `<div class="tweet-media-box">
                             <img class = "tweet-media" src="${media.media_url}" alt="Tweet Image"/>
-                            <div class="media-play-overlay" style="display:block;">
+                            <a href="${media.expanded_url}" class="media-play-overlay" style="display:block;">
                                 <img src="media-play-button.png" alt="Play Video"/>
-                            </div>
+                            </a>
                         </div>`
             }
             else {
-                dom = `<div class="tweet-media-box">
+                dom = `<a href="${media.media_url}" class="tweet-media-box">
                             <img class = "tweet-media" src="${media.media_url}" alt="Tweet Image"/>
-                            <div class="media-play-overlay">
+                            <a href="${media.expanded_url}" class="media-play-overlay">
                                 <img src="media-play-button.png" alt="Play Video"/>
-                            </div>
-                        </div>`
+                            </a>
+                        </a>`
             }
         }
         return dom
@@ -147,4 +149,7 @@ function lameDateTime(x) {
 }
 function removeUrl(str){
     return str.replace(/(?:https):\/\/(t.co?)[\n\S]+/g, '');
+}
+function openMedia(url){
+    console.log(url)
 }
