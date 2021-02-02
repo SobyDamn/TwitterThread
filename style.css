@@ -1,0 +1,156 @@
+@font-face {
+    font-family: openSans;
+    src: url(fonts/OpenSans-Regular.ttf);
+  }
+@font-face {
+    font-family: openSans-semibold;
+    src: url(fonts/OpenSans-SemiBold.ttf);
+    }
+@font-face {
+    font-family: openSans-bold;
+    src: url(fonts/OpenSans-Bold.ttf);
+  }
+@font-face {
+    font-family: Londrina-Light;
+    src: url(fonts/LondrinaSolid-Light.ttf);
+    }
+body {
+    margin: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: openSans;
+}
+.header {
+    color: white;
+    background-color: rgb(36, 36, 116);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    
+}
+#title {
+    margin: 10px;
+    margin-left: 30px;
+    font-family: Londrina-Light;
+    color: white;
+}
+.footer .foot-note {
+    text-align: center;
+}
+.footer {
+    width: 100%;
+    background-color: rgb(36, 36, 116);
+    font-family: openSans-semibold;
+    color: white;
+    text-align: center;
+}
+.footer a {
+    text-decoration: none;
+    color: rgb(128, 123, 104);
+    cursor: default;
+}
+#content-container{
+    min-height: 650px;
+}
+#btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+.menu-btn{
+    font-family: openSans-bold;
+    margin: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    color: white;
+}
+.menu-btn:hover{
+    border-bottom: 2px solid;
+}
+.sub-heading {
+    font-family: Londrina-Light;
+    font-size: 45px;
+    text-align: left;
+    color:  rgb(36, 36, 116);
+    padding-bottom: 5px;
+    display: inline;
+    width: fit-content;
+    border-bottom: 4px solid  rgb(36, 36, 116);
+}
+#content-container {
+    margin: 20px;
+}
+#about {
+    margin-bottom: 60px;
+}
+#how-to-box {
+    font-size: larger;
+    font-family: openSans;
+    color: rgb(41, 40, 40);
+    cursor: default;
+}
+.how-to-img-holder{
+    margin: 10px;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 8px;
+    width: 650px;
+    height: 350px;
+}
+.how-to-img-holder img{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+.help-list {
+    font-family: openSans-semibold;
+    color: rgb(97, 96, 96);
+    text-decoration: none;
+}
+.help-list:hover {
+    text-decoration-line: underline;
+}
+#content-container #about p{
+    font-size:larger;
+}
+@media only screen and (max-width:800px) {
+    .how-to-img-holder{
+        width: 80%;
+        height: 60%;
+    }
+}
+@media only screen and (max-width:450px) {
+    #btn-container{
+        display: none;
+    }
+    .how-to-img-holder{
+        width: 100%;
+        height: 100%;
+    }
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #title{
+        font-size: 30px;
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    #content-container #about p{
+        font-size:17px;
+    }
+    .sub-heading{
+        font-size:xx-large;
+    }
+    p {
+        font-size:17px;
+    }
+}

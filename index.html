@@ -1,1 +1,159 @@
-hello
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+    <script src="firebase-init.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <title>Tweet Threader</title>
+  <body>
+    <div class="header">
+        <div class="title-holder">
+            <h1 id="title">Tweet Threader</h1>
+        </div>
+        <div id="menu-container">
+            <div id="btn-container">
+                <a href="#help" class="menu-btn">
+                    Help
+                </a>
+                <a href="#how-to-box" class="menu-btn">
+                    How to use?
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="content-container">
+        <div id="about">
+            <h1 class="sub-heading">About</h1>
+            <p>
+                Twitter has many great people sharing valuable information in the form of threads.<br>
+                This is a twitter bot which can be used to compile threads and view it at one place or share it with others, this can also be used to print the thread and save it as pdf format for later consumption.
+                <br>
+                In case you're more interested in the working you can check my <b><a href="https://github.com/SobyDamn/TwitterThread">GitHub repository</a></b> and you can contact me in case any help needed.
+            </p>
+        </div>
+        <div id="how-to-box">
+            <h1 class="sub-heading">How to use?</h1>
+            <p>
+                There are two methods in which a thread can be compiled for you to view.
+            </p>
+            <ul style="list-style-type:none;">
+                <li>
+                    #Method 1
+                    <ol>
+                        <li>
+                            Go to the thread.
+                        </li>
+                        <li>
+                            At any part of the thread mention <b><a href="https://twitter.com/ThreaderTweet" style="text-decoration: none;">@ThreaderTweet</a> compile</b>.
+                            <br>
+                            The bot will soon reply to you with to a link of compiled thread.
+                        </li>
+                    </ol>
+                    <div class="how-to-img-holder">
+                        <img src="bot_using_compile_arg.png"/>
+                    </div>
+                </li>
+                <li>
+                    #Method 2
+                    <ol>
+                        <li>
+                            Go to the <b>bottom</b> of the thread.
+                        </li>
+                        <li>
+                            At the bottom mention <b><a href="https://twitter.com/ThreaderTweet" style="text-decoration: none;">@ThreaderTweet</a></b>.
+                            <br>
+                            The bot will soon reply to you with to a link of compiled thread.
+                        </li>
+                    </ol>
+                    <div class="how-to-img-holder">
+                        <img src="bot_use_without_arg.png"/>
+                    </div>
+                </li>
+                <li>
+                    <i>NOTE:-Try the 2nd method in case first one fails.</i>
+                </li>
+            </ul>
+        </div>
+        <div id="help">
+            <h1 class="sub-heading">Help</h1>
+            <p style="font-size: larger;">
+                <ol>
+                    <li>
+                        <a href="#thread-to-old-help" class="help-list">
+                            Getting thread too old Error!
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#no-reply-help" class="help-list">
+                            Not receiving any reply.
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#host-bot-help" class="help-list">
+                            How to host my own twitter bot?
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#received-link-help" class="help-list">
+                            Received link not working.
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#thread-incorrect-help" class="help-list">
+                            Compiled thread is incorrect or doesn't contain all the tweets.
+                        </a>
+                    </li>
+                </ol>
+                <div class="help-answers">
+                    <h3 id="thread-to-old-help">1.Getting thread too old Error!</h3>
+                    <p>
+                        This might happen if the thread is too old, this is because of limitation of twitter API. At the current moment I have limited the bot from looking every tweets to save time.
+                        <br>
+                        To solve this try the second method, which is go to the bottom of the thread and call the bot without any command <b><a href="#how-to-box">check here</a></b>.
+                    </p>
+                    <h3 id="no-reply-help">2.Not receiving any reply.</h3>
+                    <p>
+                        This can happen because of multiple reasons.
+                        <ul>
+                            <li>
+                                Thread might be too old and long and it's taking time to process it, try waiting for few more minutes.
+                            </li>
+                            <li>
+                                Bot might be turned off for maintenance or not active anymore.
+                                You can contact me to get more information regarding this.
+                            </li>
+                        </ul>
+                    </p>
+                    <h3 id="host-bot-help">3.How to host my own twitter bot?</h3>
+                    <p>
+                        I will be a writing a blog regarding this in the meantime check my <b><a href="https://github.com/SobyDamn/TwitterThread">GitHub repository</a></b>.
+                    </p>
+                    <h3 id="received-link-help">4.Received link not working.</h3>
+                    <p>
+                        This might be because of some technical error and the thread being removed from the site,try compiling the thread again.<br>
+                        Sorry for inconvenience.
+                    </p>
+                    <h3 id="thread-incorrect-help">5.Compiled thread is incorrect or doesn't contain all the tweets.</h3>
+                    <p>
+                        In case the compiled thread is incorrect or incomplete, try using 2nd method to compile.<br>
+                        This can happen if one or more tweets of the thread is not visible for the public or is pending for verification by twitter.
+                    </p>
+                </div>
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <h5 class="foot-note">Made with <a href="https://github.com/SobyDamn/TwitterThread"><i class="fa fa-heart pulse"></i></a> by SobyDamn</h5>
+    </div>
+  </body>
+</html>
+

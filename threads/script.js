@@ -104,7 +104,6 @@ class ThreadViewer {
     createTweetMediaBox(media){
         var dom = ``
         if(media){
-            console.log(media.expanded_url,media.media_url)
             if (media['type']=="video"){
                 dom = `<div class="tweet-media-box">
                             <img class = "tweet-media" src="${media.media_url}" alt="Tweet Image"/>
@@ -135,7 +134,8 @@ function lameDateTime(x) {
     /**
      * Converts given date string in pretty format
      */
-    var date = new Date(x)
+    var tempDate = new Date(x)
+    var date = new Date(tempDate.getTime() + (5.50)*60*60000)
     var monthsArray = new Array('Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
     var day = date.getDate()
     var month = date.getMonth()
