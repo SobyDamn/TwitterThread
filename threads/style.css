@@ -14,6 +14,25 @@
     font-family: Londrina-Light;
     src: url(../fonts/LondrinaSolid-Light.ttf);
     }
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: rgb(47, 91, 158); 
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background:  rgb(16, 61, 129); 
+    }
 body {
     margin: 0;
     background-color: rgba(196, 211, 212, 0.938);
@@ -82,8 +101,18 @@ body {
     color: rgb(128, 123, 104);
 }
 #title {
+    margin: 10px;
+    margin-left: 30px;
     font-family: Londrina-Light;
     color: white;
+    text-decoration: none;
+    font-size: 35px;
+    font-weight: bolder;
+}
+.title-holder{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 div#thread {
     background-color:white;
@@ -162,6 +191,13 @@ h1#title {
     color: gray;
     font-family: openSans-semibold;
     font-size: small;
+}
+.tweet:not(:first-child) label{
+    opacity: 0;
+    transition: 0.3s;
+}
+.tweet:not(:first-child):hover label{
+    opacity: 1;
 }
 .tweet-text {
     color: rgb(14, 12, 12);

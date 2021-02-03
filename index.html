@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "icon" href = "bot-icon.jpg" type = "image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="loader.css">
     <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
@@ -17,7 +18,9 @@
   <body>
     <div class="header">
         <div class="title-holder">
-            <h1 id="title">Tweet Threader</h1>
+            <a href="https://sobydamn.github.io/TwitterThread/" id="title">
+                Tweet Threader
+            </a>
         </div>
         <div id="menu-container">
             <div id="btn-container">
@@ -31,6 +34,9 @@
         </div>
     </div>
     <div id="content-container">
+        <div id="profile-icon-container">
+            <img src="bot-icon.jpg"/>
+        </div>
         <div id="about">
             <h1 class="sub-heading">About</h1>
             <p>
@@ -45,43 +51,39 @@
             <p>
                 There are two methods in which a thread can be compiled for you to view.
             </p>
-            <ul style="list-style-type:none;">
-                <li>
-                    #Method 1
-                    <ol>
-                        <li>
-                            Go to the thread.
-                        </li>
-                        <li>
-                            At any part of the thread mention <b><a href="https://twitter.com/ThreaderTweet" style="text-decoration: none;">@ThreaderTweet</a> compile</b>.
+            <p>#Method 1</p>
+                <ol>
+                    <li>
+                        <p>Go to the thread.</p>
+                    </li>
+                    <li>
+                        <p>
+                            At any part of the thread reply with <b><a href="https://twitter.com/ThreaderTweet" style="text-decoration: none;">@ThreaderTweet</a> compile</b>.
                             <br>
                             The bot will soon reply to you with to a link of compiled thread.
-                        </li>
-                    </ol>
-                    <div class="how-to-img-holder">
-                        <img src="bot_using_compile_arg.png"/>
-                    </div>
-                </li>
-                <li>
-                    #Method 2
-                    <ol>
-                        <li>
-                            Go to the <b>bottom</b> of the thread.
-                        </li>
-                        <li>
-                            At the bottom mention <b><a href="https://twitter.com/ThreaderTweet" style="text-decoration: none;">@ThreaderTweet</a></b>.
+                        </p>
+                    </li>
+                </ol>
+                <div class="how-to-img-holder">
+                    <img src="bot_using_compile_arg.png"/>
+                </div>
+                <p>#Method 2</p>
+                <ol>
+                    <li>
+                        <p>Go to the <b>bottom</b> of the thread i.e the last tweet of the thread.</p>
+                    </li>
+                    <li>
+                        <p>
+                            At the bottom reply with <b><a href="https://twitter.com/ThreaderTweet" style="text-decoration: none;">@ThreaderTweet</a></b>.
                             <br>
                             The bot will soon reply to you with to a link of compiled thread.
-                        </li>
-                    </ol>
-                    <div class="how-to-img-holder">
-                        <img src="bot_use_without_arg.png"/>
-                    </div>
-                </li>
-                <li>
-                    <i>NOTE:-Try the 2nd method in case first one fails.</i>
-                </li>
-            </ul>
+                        </p>
+                    </li>
+                </ol>
+                <div class="how-to-img-holder">
+                    <img src="bot_use_without_arg.png"/>
+                </div>
+                <p>NOTE:-Try the 2nd method in case first one fails.</p>
         </div>
         <div id="help">
             <h1 class="sub-heading">Help</h1>
