@@ -186,6 +186,7 @@ h1#title {
     max-width: 500px;
     text-align: left;
     padding: 10px;
+    padding-bottom: 20px;
 }
 .tweet-time {
     color: gray;
@@ -197,6 +198,9 @@ h1#title {
     transition: 0.3s;
 }
 .tweet:not(:first-child):hover label{
+    opacity: 1;
+}
+.tweet:not(:first-child):active label{
     opacity: 1;
 }
 .tweet-text {
@@ -229,12 +233,14 @@ h1#title {
     margin: 2px;
 }
 .tweet-media {
-    padding: 2px;
+    padding: 0px;
     width: 100%;
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
     border-radius: 8px;
+    border: 0.5px solid rgb(207, 207, 207);
+    overflow: hidden;
 }
 .media-play-overlay {
     position: absolute;
