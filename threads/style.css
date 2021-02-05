@@ -209,6 +209,9 @@ h1#title {
     cursor: pointer;
     text-decoration: none;
 }
+.tweet-text-link {
+    color: rgb(74, 39, 170);
+}
 .tweet-media-container {
     width: 100%;
     display:flex;

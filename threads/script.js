@@ -26,6 +26,7 @@ class ThreadViewer {
         this.threadRef.get().then(function(doc) {
             if (doc.exists) {
                 threadDetails = doc.data()
+                //console.log(threadDetails)
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");
@@ -61,7 +62,7 @@ class ThreadViewer {
     compileTweets(tweets,username){
         var dom = `<div id="thread-holder">`
         for (var i=0;i<tweets.length;i++){
-            dom+=this.createTweet(removeUrl(tweets[i].text),tweets[i].date,username,tweets[i].tweet_id,tweets[i].medias)
+            dom+=this.createTweet(removeUrl(tweets[i].text),tweets[i].date,username,tweets[i].tweet_id,tweets[i].medias,tweets[i].urls)
         }
         dom+=`</div>`
         return dom;
@@ -81,12 +82,14 @@ class ThreadViewer {
                     </div>`
         return dom
     }
-    createTweet(text,time,username,id,medias){
+    createTweet(text,time,username,id,medias,urls){
         var dom = `<div class="tweet">
                         <label class="tweet-time">${lameDateTime(time)}</label>
                         <br>
                         <a href="https://twitter.com/${username}/status/${id}" class="tweet-text">
                             ${text}
+                            <br>
+                            ${this.createUrls(urls)}
                         </a>
                         <div class="tweet-media-container">
                             <div class="tweet-media-container-pair">
@@ -99,6 +102,17 @@ class ThreadViewer {
                             </div>
                         </div>
                     </div>`
+        return dom
+    }
+    createUrls(urls){
+        var dom = ''
+        if (urls.length){
+            for(var i=0;i<urls.length;i++){
+                dom += `<a href="${urls[i]["expanded_url"]}" class="tweet-text-link">
+                            ${urls[i]["display_url"]}
+                        </a><br>`
+            }
+        }
         return dom
     }
     createTweetMediaBox(media){
